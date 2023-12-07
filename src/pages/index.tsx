@@ -31,6 +31,7 @@ const UsingTypescript: React.FC<PageProps<DataProps>> = ({ data, path }) => (
       <ResponsiveComponentExample title='What can you edit without yaml file?' tag='Kubernetes'></ResponsiveComponentExample>
       <ResponsiveComponentExample title='All types of objects' tag='Kubernetes'></ResponsiveComponentExample>
       <ResponsiveComponentExample title='Audit, simple use-case' tag='Linux'></ResponsiveComponentExample>
+
       {/* <Link to="/">Go back to the homepage</Link> */}
 
     </Layout>
