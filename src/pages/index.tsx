@@ -10,31 +10,32 @@ import ResponsiveColumnMobileExample from "../components/ResponsiveColumnMobileE
 import ResponsiveFooter from "../components/ResponsiveFooter"
 
 type DataProps = {
-    site: {
-        buildTime: string
-    }
+  site: {
+    buildTime: string
+  }
 }
 
 const UsingTypescript: React.FC<PageProps<DataProps>> = ({ data, path }) => (
 
-    <>
-        <Layout title="TEST">
-            <SEO title="Home" />
+  <>
+    <Layout title="TEST">
+      <SEO title="Home" />
 
-            <ResponsiveColumnExample></ResponsiveColumnExample>
-            <ResponsiveComponentExample title='Simple Static Website' tag='Cloud'></ResponsiveComponentExample>
-            <ResponsiveComponentExample title='What is a Kubelet?' tag='Kubernetes'></ResponsiveComponentExample>
-            <ResponsiveComponentExample title='EFS vs S3' tag='Cloud'></ResponsiveComponentExample>
-            <ResponsiveComponentExample title='Amazon Linux 2' tag='Cloud'></ResponsiveComponentExample>
-            <ResponsiveComponentExample title='Simple Static Website' tag='Cloud'></ResponsiveComponentExample>
-            <ResponsiveComponentExample title='Convert Systemd to Service' tag='Linux'></ResponsiveComponentExample>
-            <ResponsiveComponentExample title='What can you edit without yaml file?' tag='Kubernetes'></ResponsiveComponentExample>
-            <ResponsiveComponentExample title='All types of objects' tag='Kubernetes'></ResponsiveComponentExample>
-            <ResponsiveComponentExample title='Audit, simple use-case' tag='Linux'></ResponsiveComponentExample>
-            {/* <Link to="/">Go back to the homepage</Link> */}
-        </Layout>
-        <ResponsiveFooter></ResponsiveFooter>
-    </>
+      <ResponsiveColumnExample></ResponsiveColumnExample>
+      <ResponsiveComponentExample title='Simple Static Website' tag='Cloud'></ResponsiveComponentExample>
+      <ResponsiveComponentExample title='What is a Kubelet?' tag='Kubernetes'></ResponsiveComponentExample>
+      <ResponsiveComponentExample title='EFS vs S3' tag='Cloud'></ResponsiveComponentExample>
+      <ResponsiveComponentExample title='Amazon Linux 2' tag='Cloud'></ResponsiveComponentExample>
+      <ResponsiveComponentExample title='Simple Static Website' tag='Cloud'></ResponsiveComponentExample>
+      <ResponsiveComponentExample title='Convert Systemd to Service' tag='Linux'></ResponsiveComponentExample>
+      <ResponsiveComponentExample title='What can you edit without yaml file?' tag='Kubernetes'></ResponsiveComponentExample>
+      <ResponsiveComponentExample title='All types of objects' tag='Kubernetes'></ResponsiveComponentExample>
+      <ResponsiveComponentExample title='Audit, simple use-case' tag='Linux'></ResponsiveComponentExample>
+      {/* <Link to="/">Go back to the homepage</Link> */}
+
+    </Layout>
+    <ResponsiveFooter></ResponsiveFooter>
+  </>
 )
 
 export default UsingTypescript
