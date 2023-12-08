@@ -23,8 +23,8 @@ const ResponsiveFooter = ({ siteTitle = "" }) => {
 
     return (
         <Box sx={{
-            position: 'static',
-            bottom: 'auto'
+            position: 'absolute',
+            bottom: '0'
         }} as="footer" p={12} bgGradient='linear(to-r, blackAlpha.900, gray.700)' textAlign="center">
             <VStack spacing={2}>
                 <Text color='whiteAlpha.900' >© {new Date().getFullYear()} Krzysztof Kwietniewski</Text>
