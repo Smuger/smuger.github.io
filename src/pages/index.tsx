@@ -3,7 +3,7 @@ import { PageProps, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Box, Image, Text, Link } from "@chakra-ui/react"
+import { Box, Image, Text, Link, useColorMode } from "@chakra-ui/react"
 import ResponsiveComponentExample from "../components/ResponsiveComponentExample"
 import ResponsiveColumnExample from "../components/ResponsiveColumnExample"
 // import ResponsiveColumnMobileExample from "../components/ResponsiveColumnMobileExample"
@@ -25,6 +25,8 @@ const UsingTypescript: React.FC<PageProps<DataProps>> = ({ data, path }) => {
     }
   }, []);
 
+  const { colorMode, toggleColorMode } = useColorMode()
+
   return (
     <>
       <Layout title="TEST">
@@ -44,7 +46,7 @@ const UsingTypescript: React.FC<PageProps<DataProps>> = ({ data, path }) => {
         {/* <Link to="/">Go back to the homepage</Link> */}
 
       </Layout>
-      <ResponsiveFooter></ResponsiveFooter>
+      <ResponsiveFooter variant={colorMode}></ResponsiveFooter>
     </>
   )
 }
