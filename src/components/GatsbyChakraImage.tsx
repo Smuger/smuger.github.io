@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import ResponsiveColumnMobileExample from "./ResponsiveColumnMobileExample"
 import { StaticImage } from "gatsby-plugin-image"
+import Logo from "../assets/logo.svg"
 
 const components: Record<string, StyleConfig> = {
     CustomBadge: {
@@ -45,7 +46,8 @@ const GatsbyChakraImage = forwardRef<CustomBadgeProps, "span">((props, ref) => {
     else {
         filter = 'inherit'
     }
-    return <chakra.span ref={ref}><StaticImage style={{ 'filter': `${filter}` }} src="../images/logo.svg" alt="Logo" width={50} /></chakra.span>;
+    // <StaticImage  src="../images/logo.svg" alt="Logo" width={50} />
+    return <chakra.span ref={ref}><Logo style={{ 'filter': `${filter}` }} alt="Logo" height={54} width={50} /></chakra.span>;
 });
 
 export default GatsbyChakraImage
