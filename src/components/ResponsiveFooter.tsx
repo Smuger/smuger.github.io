@@ -22,7 +22,10 @@ const ResponsiveFooter = ({ siteTitle = "" }) => {
     let variantChange = "0.2s linear";
 
     return (
-        <Box as="footer" p={12} bgGradient='linear(to-r, blackAlpha.900, gray.700)' textAlign="center">
+        <Box sx={{
+            position: 'static',
+            bottom: 'auto'
+        }} as="footer" p={12} bgGradient='linear(to-r, blackAlpha.900, gray.700)' textAlign="center">
             <VStack spacing={2}>
                 <Text color='whiteAlpha.900' >© {new Date().getFullYear()} Krzysztof Kwietniewski</Text>
                 {/* <Link as={RouterLink} to="/about" color="blue.500">
