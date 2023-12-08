@@ -3,7 +3,7 @@ import { PageProps, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Box, Image, Text, Link, VStack, Skeleton, useColorMode } from "@chakra-ui/react"
+import { Box, Image, Text, Link, VStack, Skeleton, useColorMode, Spacer } from "@chakra-ui/react"
 import ResponsiveComponentExample from "../components/ResponsiveComponentExample"
 import ResponsiveColumnExample from "../components/ResponsiveColumnExample"
 import ResponsiveColumnMobileExample from "../components/ResponsiveColumnMobileExample"
@@ -31,20 +31,29 @@ const Post: React.FC<PageProps<DataProps>> = ({ data, path }) => {
     //     
     // </>
     <>
-      <SEO title="Post" />
-      <VStack
-        height="100vh" // Set the height of the container to the full viewport height
-        maxWidth="800px" // Set the maximum width of the container
-        mx="auto" // Center the container horizontally
-        p={4} // Add some padding for better visual appearance
-      >
-        <Header siteTitle='post' />
-        <Skeleton height="20px" width="70%" mb={4} /> {/* Example skeleton element */}
-        <Skeleton height="20px" width="60%" mb={4} /> {/* Another example */}
-        {/* Add more skeleton elements as needed */}
+      <Layout title="TEST">
+        <SEO title="Post" />
 
-      </VStack>
+        <Box mt={4}>
+          <Skeleton height="20px" width="90%" mb={4} style={{ marginLeft: "auto", marginRight: "auto" }} />
+          <Skeleton height="20px" width="75%" mb={4} style={{ marginLeft: "auto", marginRight: "auto" }} />
+          <Skeleton height="20px" width="60%" mb={4} style={{ marginLeft: "auto", marginRight: "auto" }} />
+          <Skeleton height="20px" width="80%" mb={4} style={{ marginLeft: "auto", marginRight: "auto" }} />
+          <Skeleton height="20px" width="70%" mb={4} style={{ marginLeft: "auto", marginRight: "auto" }} />
+          <Skeleton height="20px" width="90%" mb={4} style={{ marginLeft: "auto", marginRight: "auto" }} />
+          <Skeleton height="20px" width="75%" mb={4} style={{ marginLeft: "auto", marginRight: "auto" }} />
+          <Skeleton height="20px" width="60%" mb={4} style={{ marginLeft: "auto", marginRight: "auto" }} />
+          <Skeleton height="20px" width="80%" mb={4} style={{ marginLeft: "auto", marginRight: "auto" }} />
+          <Skeleton height="20px" width="70%" mb={4} style={{ marginLeft: "auto", marginRight: "auto" }} />
+          <Skeleton height="20px" width="90%" mb={4} style={{ marginLeft: "auto", marginRight: "auto" }} />
+          <Skeleton height="20px" width="75%" mb={4} style={{ marginLeft: "auto", marginRight: "auto" }} />
+          <Skeleton height="20px" width="60%" mb={4} style={{ marginLeft: "auto", marginRight: "auto" }} />
+          <Skeleton height="20px" width="80%" mb={4} style={{ marginLeft: "auto", marginRight: "auto" }} />
+          <Skeleton height="20px" width="70%" mb={4} style={{ marginLeft: "auto", marginRight: "auto" }} />
 
+        </Box>
+
+      </Layout>
 
       <ResponsiveFooter variant={colorMode}></ResponsiveFooter>
     </>
