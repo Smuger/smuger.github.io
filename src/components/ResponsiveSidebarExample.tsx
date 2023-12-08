@@ -2,7 +2,7 @@
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Flex, Stack, Wrap, WrapItem } from "@chakra-ui/react"
 import PropTypes from "prop-types"
 import React from "react"
-import LinksExample from "./LinksExample"
+// import LinksExample from "./LinksExample"
 
 
 const ResponsiveSidebarExample = () => {

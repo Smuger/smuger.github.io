@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import { Box, Image, Text, Link } from "@chakra-ui/react"
 import ResponsiveComponentExample from "../components/ResponsiveComponentExample"
 import ResponsiveColumnExample from "../components/ResponsiveColumnExample"
-import ResponsiveColumnMobileExample from "../components/ResponsiveColumnMobileExample"
+// import ResponsiveColumnMobileExample from "../components/ResponsiveColumnMobileExample"
 import ResponsiveFooter from "../components/ResponsiveFooter"
 
 type DataProps = {
