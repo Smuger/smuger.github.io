@@ -11,15 +11,17 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import ResponsiveFooter from "./ResponsiveFooter"
+import { Button, Container, useColorMode, VStack } from "@chakra-ui/react";
 // import "../styles/layout.css"
 
 interface WrapperProps {
-    title: string;
-    children: ReactNode;
+  title: string;
+  children: ReactNode;
 }
 
 const Layout: React.FC<WrapperProps> = ({ title, children }) => {
-    const data = useStaticQuery(graphql`
+
+  const data = useStaticQuery(graphql`
         query SiteTitleQuery {
           site {
             siteMetadata {
@@ -29,23 +31,16 @@ const Layout: React.FC<WrapperProps> = ({ title, children }) => {
         }
       `)
 
-    return (
+  return (
 
-        <>
+    <VStack>
+      <Container maxW='container.sm'>
+        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
 
-            <div
-                style={{
-                    margin: `0 auto`,
-                    maxWidth: 960,
-                    padding: `0 1.0875rem 1.45rem`
-                }}
-            >
-                <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-                <main>{children}</main>
-
-            </div>
-        </>
-    )
+        <main>{children}</main>
+      </Container>
+    </VStack>
+  )
 }
 
 // Layout.propTypes = {

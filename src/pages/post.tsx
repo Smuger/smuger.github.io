@@ -11,12 +11,15 @@ import ResponsiveFooter from "../components/ResponsiveFooter"
 import Header from "../components/header"
 
 type DataProps = {
-    site: {
-        buildTime: string
-    }
+  site: {
+    buildTime: string
+  }
 }
 
-const Post: React.FC<PageProps<DataProps>> = ({ data, path }) => (
+const Post: React.FC<PageProps<DataProps>> = ({ data, path }) => {
+  
+
+  return (
 
     // <>
     //     <Layout title="TEST">
@@ -28,25 +31,26 @@ const Post: React.FC<PageProps<DataProps>> = ({ data, path }) => (
     //     
     // </>
     <>
-        <SEO title="Post" />
-        <VStack
-            height="100vh" // Set the height of the container to the full viewport height
-            maxWidth="800px" // Set the maximum width of the container
-            mx="auto" // Center the container horizontally
-            p={4} // Add some padding for better visual appearance
-        >
-            <Header siteTitle='post' />
-            <Skeleton height="20px" width="70%" mb={4} /> {/* Example skeleton element */}
-            <Skeleton height="20px" width="60%" mb={4} /> {/* Another example */}
-            {/* Add more skeleton elements as needed */}
+      <SEO title="Post" />
+      <VStack
+        height="100vh" // Set the height of the container to the full viewport height
+        maxWidth="800px" // Set the maximum width of the container
+        mx="auto" // Center the container horizontally
+        p={4} // Add some padding for better visual appearance
+      >
+        <Header siteTitle='post' />
+        <Skeleton height="20px" width="70%" mb={4} /> {/* Example skeleton element */}
+        <Skeleton height="20px" width="60%" mb={4} /> {/* Another example */}
+        {/* Add more skeleton elements as needed */}
 
-        </VStack>
+      </VStack>
 
 
-        <ResponsiveFooter></ResponsiveFooter>
+      <ResponsiveFooter></ResponsiveFooter>
     </>
 
-)
+  )
+}
 
 export default Post
 

@@ -1,46 +1,60 @@
-import { Box, Image, Flex, Center } from "@chakra-ui/react"
+import { Box, Image, Flex, Center, useColorMode, Button, Icon, Spacer } from "@chakra-ui/react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import ResponsiveColumnMobileExample from "./ResponsiveColumnMobileExample"
 import { StaticImage } from "gatsby-plugin-image"
+import GatsbyChakraImage from "./GatsbyChakraImage"
+import { MoonIcon } from "@chakra-ui/icons"
 
-const Header = ({ siteTitle = "" }) => (
-    <Flex
-        as="header"
-        align="center"
-        justify="space-between"
-        padding="4"
-        borderBottom="1px"
-        borderColor="gray.200"
-        width="100%"
-    >
-        {/* Logo on the left */}
-        <Box>
-            {/* Your logo component or image goes here */}
-            {/* <Image src='' /> */}
+const Header = ({ siteTitle = "" }) => {
+    const { colorMode, toggleColorMode } = useColorMode()
+    return (
+        <Flex
+            as="header"
+            align="center"
+            justify="space-between"
+            padding="4"
+            borderBottom="1px"
+            borderColor="gray.200"
+            width="100%"
+        >
+            {/* Logo on the left */}
+            <Box>
+                {/* Your logo component or image goes here */}
+                {/* <Image src='' /> */}
 
-            <Link
-                to="/"
-                style={{
+                <Link
+                    to="/"
+                    style={{
 
-                    textDecoration: "none",
-                }}
-            >
-                <StaticImage src="../images/logo.svg" alt="Logo" width={50} />
-            </Link>
+                        textDecoration: "none",
+                    }}
+                >
+                    <GatsbyChakraImage variant={colorMode} />
+                </Link>
 
-        </Box>
-        <Center>
-            Kwietniewski Cloud
-        </Center>
+            </Box>
+            <Center>
+                Kwietniewski Cloud
+            </Center>
+            <Spacer />
+            <Box>
+                <Button onClick={toggleColorMode}>
+                    <Icon as={MoonIcon} />
+                </Button>
+            </Box>
 
-        {/* Button on the right */}
-        <Box>
-            <ResponsiveColumnMobileExample></ResponsiveColumnMobileExample>
-        </Box>
-    </Flex>
-)
+            {/* Button on the right */}
+            <Box>
+                <ResponsiveColumnMobileExample></ResponsiveColumnMobileExample>
+            </Box>
+        </Flex>
+    )
+}
+
+
+
 
 // const Header = ({ siteTitle = "" }) => (
 //     <header

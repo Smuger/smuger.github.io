@@ -10,10 +10,11 @@ interface ResponsiveComponentProps {
 }
 
 const ResponsiveComponentExample = (props: ResponsiveComponentProps) => {
-    const leftPadding = useBreakpointValue({ base: `1rem`, md: `350px`, lg: `350px` });
+    // const leftPadding = useBreakpointValue({ base: `1rem`, md: `350px`, lg: `350px` });
+    // paddingLeft={leftPadding}
 
     return (
-        <Box p={4} display={{ md: "flex" }} paddingLeft={leftPadding}>
+        <Box p={4} display={{ md: "flex" }} >
             <Box flexShrink={0}>
                 <Image
                     borderRadius="lg"

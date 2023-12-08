@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from 'react';
 import { PageProps, graphql } from "gatsby"
 
 import Layout from "../components/layout"
@@ -15,29 +15,39 @@ type DataProps = {
   }
 }
 
-const UsingTypescript: React.FC<PageProps<DataProps>> = ({ data, path }) => (
+const UsingTypescript: React.FC<PageProps<DataProps>> = ({ data, path }) => {
+  const [theme, setTheme] = useState<string>('light');
 
-  <>
-    <Layout title="TEST">
-      <SEO title="Home" />
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('siteTheme');
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
+  }, []);
 
-      <ResponsiveColumnExample></ResponsiveColumnExample>
-      <ResponsiveComponentExample title='Simple Static Website' tag='Cloud'></ResponsiveComponentExample>
-      <ResponsiveComponentExample title='What is a Kubelet?' tag='Kubernetes'></ResponsiveComponentExample>
-      <ResponsiveComponentExample title='EFS vs S3' tag='Cloud'></ResponsiveComponentExample>
-      <ResponsiveComponentExample title='Amazon Linux 2' tag='Cloud'></ResponsiveComponentExample>
-      <ResponsiveComponentExample title='Simple Static Website' tag='Cloud'></ResponsiveComponentExample>
-      <ResponsiveComponentExample title='Convert Systemd to Service' tag='Linux'></ResponsiveComponentExample>
-      <ResponsiveComponentExample title='What can you edit without yaml file?' tag='Kubernetes'></ResponsiveComponentExample>
-      <ResponsiveComponentExample title='All types of objects' tag='Kubernetes'></ResponsiveComponentExample>
-      <ResponsiveComponentExample title='Audit, simple use-case' tag='Linux'></ResponsiveComponentExample>
+  return (
+    <>
+      <Layout title="TEST">
+        <SEO title="Home" />
 
-      {/* <Link to="/">Go back to the homepage</Link> */}
+        {/* <ResponsiveColumnExample></ResponsiveColumnExample> */}
+        <ResponsiveComponentExample title='Simple Static Website' tag='Cloud'></ResponsiveComponentExample>
+        <ResponsiveComponentExample title='What is a Kubelet?' tag='Kubernetes'></ResponsiveComponentExample>
+        <ResponsiveComponentExample title='EFS vs S3' tag='Cloud'></ResponsiveComponentExample>
+        <ResponsiveComponentExample title='Amazon Linux 2' tag='Cloud'></ResponsiveComponentExample>
+        <ResponsiveComponentExample title='Simple Static Website' tag='Cloud'></ResponsiveComponentExample>
+        <ResponsiveComponentExample title='Convert Systemd to Service' tag='Linux'></ResponsiveComponentExample>
+        <ResponsiveComponentExample title='What can you edit without yaml file?' tag='Kubernetes'></ResponsiveComponentExample>
+        <ResponsiveComponentExample title='All types of objects' tag='Kubernetes'></ResponsiveComponentExample>
+        <ResponsiveComponentExample title='Audit, simple use-case' tag='Linux'></ResponsiveComponentExample>
 
-    </Layout>
-    <ResponsiveFooter></ResponsiveFooter>
-  </>
-)
+        {/* <Link to="/">Go back to the homepage</Link> */}
+
+      </Layout>
+      <ResponsiveFooter></ResponsiveFooter>
+    </>
+  )
+}
 
 export default UsingTypescript
 
